@@ -1,0 +1,288 @@
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
+client.on("ready", () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+  console.log("By Network");
+
+    client.user
+    .setActivity(`.gg/visit .gg/507`, {
+      type: "STREAMING",
+      url: "https://www.twitch.tv/jenivyss"
+    })
+    .then(presence =>
+      console.log(
+        `Your Status has been set to  ${
+          presence.game ? presence.game.none : "none"
+        }`
+      )
+    )
+    .catch(console.error);
+});
+
+client.on("message", message => {
+  if (message.content === "hi") {
+    return message.channel.send(
+      "hello"
+    );
+  }
+  if (message.content === "+help") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setAuthor(
+        `${message.author.tag}`,
+        message.author.displayAvatarURL({ dynamic: true })
+      ) // Author Name & Author Icon
+      .setTitle(`Rare's Bot Commands`)
+      .setDescription(
+        "- Bot Made in 08/04/21 \n - Bot Made by mora#1999 \n \n * Down Below are the server commands"
+      )
+      .addField("Prefix", "+")
+      .addField(
+        "Emotions",
+        "**+help** \n `+smile` `+cry` `+giggle` `+mad` \n `+shocked` `+adore` `+shrug` `+confused` \n `+scared` `+bored` `+disgusted` `+laugh`"
+      )
+      .addField(
+        "NSFW",
+        "`+boobs` `+anal` `+pussy` `+ass` `+threesome` \n `+dick` `+porn` `+lesbian` `+gay` `+hentai`"
+      )
+      .addField(
+        `Invite`,
+        `[Click here to Invite **Rare**](https://discord.com/api/oauth2/authorize?client_id=872688841708937217&permissions=8&scope=bot)`
+      ) // This is bot's invite link
+      .setImage(
+        "https://images-ext-2.discordapp.net/external/W7A_-MiVdsmTpFyefcFLDAhrkoKvtiu5MvOKu7e81uo/https/media.discordapp.net/attachments/858313900070928415/866474317122633728/d50118bbd0445e3d5316bea98c66f31e.gif"
+      )
+      .setFooter("Join discord.gg/visit | Support Our Server");
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+smile") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`${message.author.username} smiled...`)
+      .setImage(
+        "https://i0.wp.com/animemotivation.com/wp-content/uploads/2017/06/Chiyo-Sakura.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+cry") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`help! ${message.author.username} cried...`)
+      .setImage("https://i.gifer.com/4RUc.gif");
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+giggle") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`${message.author.username} giggles...`)
+      .setImage(
+        "https://gifimage.net/wp-content/uploads/2018/10/anime-girl-laugh-gif-8.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+mad") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`GRR! ${message.author.username} is mad...`)
+      .setImage(
+        "https://64.media.tumblr.com/428b35954b0a2c49d5e445d7149b2903/d127268f2f612bb7-d1/s2048x3072_c5400,0,94400,100000/3e12a44400d0aa441027997fca1a43a650cfe623.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+shocked") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`AHH! ${message.author.username} is shocked...`)
+      .setImage(
+        "https://i.pinimg.com/originals/fb/37/41/fb3741a9977e769bd365fd6e1b835cdc.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+adore") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`Awe, ${message.author.username} adores you...`)
+      .setImage(
+        "https://64.media.tumblr.com/8d67fd3c95f208b46820bce69052bad8/tumblr_os3ptyjDwI1wn2b96o1_r1_500.gifv"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+confused") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`Huh.. ${message.author.username} is confused...`)
+      .setImage("https://i.imgur.com/tQqSQEs.jpg");
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+scared") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`Help! ${message.author.username}, im scared...`)
+      .setImage(
+        "https://media.tenor.com/images/e3c2bee74806139d56d7c08b2b15d333/tenor.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+bored") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`Pheww! ${message.author.username} is bored...`)
+      .setImage(
+        "https://media1.tenor.com/images/a340440412de6fa78915b2919627fd9b/tenor.gif?itemid=12003953"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+disgusted") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`Eww! ${message.author.username}, I'm disgusted`)
+      .setImage(
+        "https://media1.tenor.com/images/084a52050a6aa0522525571de4316479/tenor.gif?itemid=14764512"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+shrug") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`Huh? ${message.author.username} doesn't know...`)
+      .setImage(
+        "https://media1.tenor.com/images/94898cd48980cfc4128622300a9ba746/tenor.gif?itemid=14913933"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+laugh") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setTitle(`Haha! ${message.author.username} laughed...`)
+      .setImage(
+        "https://i.pinimg.com/originals/95/73/bc/9573bc84713c2c66174e0cbcf64d6ea0.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+boobs") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://images-ext-1.discordapp.net/external/TgUv5Yo6N407NHYY2SoHcgl4xgNCfh-z9BV-XsRdYJQ/https/cdn.boob.bot/Gifs/1697.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+anal") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://images-ext-1.discordapp.net/external/mnUfyxNi5BXhQoGxQ8xfZSA1PcWuQAPta42203WDgW4/https/cdn.boob.bot/Gifs/18CF.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+pussy") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://media.discordapp.net/attachments/847406834662375456/872635880370745354/image0.png?width=216&height=426"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+ass") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://images-ext-1.discordapp.net/external/E0jKJBDYXg_dJUPK2KyOvnK14RGT3D6UflS6bMhk5So/https/cdn.boob.bot/ass/4E75.JPG"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+threesome") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://images-ext-2.discordapp.net/external/si6x13kfgZawPY4B4gRvgtafsy9GSP4cx86F_hj_4cc/https/cdn.boob.bot/Gifs/1719.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+cock") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://media.discordapp.net/attachments/840219136516423741/843104182080110623/20210515_203146.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+dick") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://images-ext-2.discordapp.net/external/dhj-NHltNl2r4r5Y66GOOUmJv6v6FdlHhIuY-jIkjw0/https/cdn.boob.bot/Gifs/19BA.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+porn") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://images-ext-2.discordapp.net/external/QHSeKQyWXp7yRkEMP0jlZYp-15ejatnmDvT7lQsOUmc/https/cdn.boob.bot/Gifs/17DD.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+lesbian") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://media.discordapp.net/attachments/872476189078466652/872477309196709918/image1.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+gay") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://media.discordapp.net/attachments/872476189078466652/872477308705964072/image0.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+
+  if (message.content === "+hentai") {
+    const embedmsg = new Discord.MessageEmbed()
+      .setColor("WHITE") // You can use RANDOM or HEX Codes like #ff0000
+      .setImage(
+        "https://media.discordapp.net/attachments/840219136516423741/843099928514527292/20210515_201441.gif"
+      );
+    message.channel.send(embedmsg);
+  }
+});
+
+client.login(process.env.BOT_TOKEN);
+
+let count = 0;
+setInterval(
+  () =>
+    require("node-fetch")(process.env.URL).then(() =>
+      console.log(`[${++count}] My Ping Is There ${process.env.URL}`)
+    ),
+
+  300000
+);
+
+client.login(process.env.BOT_TOKEN);
